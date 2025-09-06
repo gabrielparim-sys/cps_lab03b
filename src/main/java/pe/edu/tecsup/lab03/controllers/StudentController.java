@@ -16,10 +16,16 @@ public class StudentController {
 
     public void mostrarEstudiantes() {
         List<StudentEntity> estudiantes = studentService.listarEstudiantes();
+        if (estudiantes.isEmpty()) {
+            System.out.println("⚠️ No hay estudiantes registrados aún.");
+            return;
+        }
         System.out.println("📋 Lista de estudiantes:");
+        System.out.println("------------------------");
         for (StudentEntity e : estudiantes) {
             System.out.println(e);
         }
+        System.out.println("------------------------");
     }
 
     public void buscarEstudiante(Long id) {
