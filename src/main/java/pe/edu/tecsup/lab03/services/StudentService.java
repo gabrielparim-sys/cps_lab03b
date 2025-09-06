@@ -8,9 +8,12 @@ import java.util.List;
 public class StudentService {
 
     private StudentRepository repository = new StudentRepository();
-    public void sinEstudiante(long id){
-        StudentEntity estudiante = studentService.buscarPorId(id);
+
+    // Nuevo método corregido
+    public boolean sinEstudiante(long id) {
+        return repository.findById(id) == null;
     }
+
     public void registrarEstudiante(Long id, String nombre, String correo) {
         StudentEntity student = new StudentEntity(id, nombre, correo);
         repository.save(student);
