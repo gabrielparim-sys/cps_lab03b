@@ -22,6 +22,10 @@ public class StudentController {
         }
     }
 
+    public void sinEstudiante(long id){
+        StudentEntity estudiante = studentService.buscarPorId(id);
+    }
+
     public void buscarEstudiante(Long id) {
         StudentEntity estudiante = studentService.buscarPorId(id);
         if (estudiante != null) {
