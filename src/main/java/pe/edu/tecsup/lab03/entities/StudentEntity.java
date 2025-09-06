@@ -12,7 +12,9 @@ public class StudentEntity {
         this.nombre = nombre;
         this.correo = correo;
     }
-
+    public void sinEstudiante(long id){
+        StudentEntity estudiante = studentService.buscarPorId(id);
+    }
     // Getters y Setters
     public Long getId() {
         return id;

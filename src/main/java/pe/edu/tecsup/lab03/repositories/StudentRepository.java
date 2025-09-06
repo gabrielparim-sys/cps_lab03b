@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentRepository {
-
+    public void sinEstudiante(long id){
+        StudentEntity estudiante = studentService.buscarPorId(id);
+    }
     private List<StudentEntity> estudiantes = new ArrayList<>();
 
     public void save(StudentEntity student) {
