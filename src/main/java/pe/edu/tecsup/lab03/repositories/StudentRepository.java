@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentRepository {
-    public void sinEstudiante(long id){
-        StudentEntity estudiante = studentService.buscarPorId(id);
-    }
+
     private List<StudentEntity> estudiantes = new ArrayList<>();
 
     public void save(StudentEntity student) {
@@ -24,5 +22,10 @@ public class StudentRepository {
                 .filter(s -> s.getId().equals(id))
                 .findFirst()
                 .orElse(null);
+    }
+
+    // Nuevo método: verificar si no existe
+    public boolean sinEstudiante(Long id) {
+        return findById(id) == null;
     }
 }
